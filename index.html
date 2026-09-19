@@ -1,56 +1,313 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>FreeCam</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreeCam Dashboard</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0b0f17;
+            color: #ffffff;
+            min-height: 100vh;
+        }
+
+        header {
+            height: 70px;
+            background: #111827;
+            border-bottom: 1px solid #263244;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 30px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #4f8cff;
+        }
+
+        .online {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #54d68c;
+            font-size: 14px;
+        }
+
+        .dot {
+            width: 9px;
+            height: 9px;
+            background: #54d68c;
+            border-radius: 50%;
+        }
+
+        main {
+            width: 92%;
+            max-width: 1200px;
+            margin: 35px auto;
+        }
+
+        .welcome {
+            margin-bottom: 30px;
+        }
+
+        .welcome h1 {
+            font-size: 34px;
+            margin-bottom: 8px;
+        }
+
+        .welcome p {
+            color: #8994a5;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background: #111827;
+            border: 1px solid #263244;
+            border-radius: 14px;
+            padding: 24px;
+        }
+
+        .card h2 {
+            font-size: 18px;
+            margin-bottom: 12px;
+        }
+
+        .number {
+            font-size: 34px;
+            font-weight: bold;
+        }
+
+        .description {
+            color: #8994a5;
+            margin-top: 7px;
+            font-size: 14px;
+        }
+
+        .wide {
+            grid-column: span 2;
+        }
+
+        .full {
+            grid-column: 1 / -1;
+        }
+
+        .code {
+            font-size: 28px;
+            letter-spacing: 5px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        button {
+            background: #4f8cff;
+            border: none;
+            color: white;
+            padding: 11px 17px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        button:hover {
+            background: #3978e8;
+        }
+
+        .secondary {
+            background: #202b3d;
+        }
+
+        .secondary:hover {
+            background: #2b394e;
+        }
+
+        .device {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #0d1420;
+            border: 1px solid #263244;
+            padding: 16px;
+            border-radius: 10px;
+            margin-top: 12px;
+        }
+
+        .device-name {
+            font-weight: bold;
+        }
+
+        .device-status {
+            color: #54d68c;
+            font-size: 13px;
+            margin-top: 5px;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 100px;
+            margin: 12px 0;
+            padding: 12px;
+            resize: vertical;
+            background: #0d1420;
+            border: 1px solid #263244;
+            border-radius: 8px;
+            color: white;
+            outline: none;
+        }
+
+        .activity {
+            border-left: 3px solid #4f8cff;
+            padding: 12px 15px;
+            background: #0d1420;
+            margin-top: 10px;
+            border-radius: 5px;
+            color: #c1c9d5;
+        }
+
+        footer {
+            text-align: center;
+            color: #667386;
+            padding: 35px;
+        }
+
+        @media (max-width: 800px) {
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .wide,
+            .full {
+                grid-column: span 1;
+            }
+
+            header {
+                padding: 0 18px;
+            }
+
+            main {
+                width: 94%;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <h1>FreeCam</h1>
+<header>
+    <div class="logo">
+        Free<span>Cam</span>
+    </div>
 
-    <p>Control Dashboard</p>
+    <div class="online">
+        <div class="dot"></div>
+        Online
+    </div>
+</header>
 
-    <hr>
+<main>
 
-    <h2>Dashboard</h2>
+    <div class="welcome">
+        <h1>FreeCam Dashboard</h1>
+        <p>Welcome to your control center.</p>
+    </div>
 
-    <p>System Status: Online</p>
-    <p>Connected Devices: 0</p>
+    <div class="cards">
 
-    <hr>
+        <div class="card">
+            <h2>System Status</h2>
+            <div class="number">Online</div>
+            <div class="description">FreeCam is running normally.</div>
+        </div>
 
-    <h2>Access Code</h2>
+        <div class="card">
+            <h2>Connected Devices</h2>
+            <div class="number">0</div>
+            <div class="description">Currently connected devices</div>
+        </div>
 
-    <p>Current Access Code: 123456</p>
+        <div class="card">
+            <h2>Access</h2>
+            <div class="number">Active</div>
+            <div class="description">Dashboard access is enabled.</div>
+        </div>
 
-    <button>Generate New Code</button>
-    <button>Copy Code</button>
+        <div class="card wide">
+            <h2>Access Code</h2>
 
-    <hr>
+            <div class="code">
+                123456
+            </div>
 
-    <h2>Paired Devices</h2>
+            <button>Generate New Code</button>
+            <button class="secondary">Copy Code</button>
+        </div>
 
-    <p>No devices paired.</p>
+        <div class="card">
+            <h2>Dashboard</h2>
+            <p class="description">
+                Manage your FreeCam dashboard from this page.
+            </p>
+            <br>
+            <button>Dashboard Settings</button>
+        </div>
 
-    <button>Pair Device</button>
+        <div class="card full">
+            <h2>Paired Devices</h2>
 
-    <hr>
+            <div class="device">
+                <div>
+                    <div class="device-name">No devices connected</div>
+                    <div class="device-status">Waiting for a device</div>
+                </div>
 
-    <h2>Announcements</h2>
+                <button>Pair Device</button>
+            </div>
+        </div>
 
-    <textarea rows="5" cols="40" placeholder="Write an announcement..."></textarea>
-    <br><br>
-    <button>Send Announcement</button>
+        <div class="card wide">
+            <h2>Announcements</h2>
 
-    <hr>
+            <textarea placeholder="Write an announcement..."></textarea>
 
-    <h2>Recent Activity</h2>
+            <button>Send Announcement</button>
+        </div>
 
-    <p>FreeCam dashboard started.</p>
+        <div class="card">
+            <h2>Recent Activity</h2>
 
-    <hr>
+            <div class="activity">
+                Dashboard started
+            </div>
 
-    <p>FreeCam Control Center</p>
+            <div class="activity">
+                FreeCam is online
+            </div>
+        </div>
+
+    </div>
+
+</main>
+
+<footer>
+    FreeCam Control Center
+</footer>
 
 </body>
 </html>
